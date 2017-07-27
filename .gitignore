@@ -1,0 +1,11 @@
+*~
+*.snap
+minicom-2.7.1.tar.gz
+minicom-2.7.1/
+ncurses-6.0-20170722.tgz
+ncurses-6.0-20170722.tgz.asc
+ncurses-6.0-20170722/
+parts/
+prime/
+snap/
+stage/

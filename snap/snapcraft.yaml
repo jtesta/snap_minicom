@@ -1,0 +1,39 @@
+name: minicom-optimized
+version: '2.7.1-0'
+summary:  Minicom is a friendly menu-driven serial communications program.
+description: |
+  This port is optimized for the Snap system.  Unfortunately, it may not work
+  in strict mode on all platforms due to missing serial port support.  In that
+  case, try running it in devmode.
+
+  Bug reports and development are tracked at: https://github.com/jtesta/snap_minicom
+
+grade: stable
+confinement: strict
+
+apps:
+  minicom:
+    command: minicom
+    plugs: [serial-port]
+
+parts:
+  ncurses:
+    source: ncurses-6.0-20170722
+    plugin: autotools
+    configflags:
+      - --without-manpages
+      - --enable-ext-colors
+      - --without-tests
+      - --without-progs
+      - --disable-big-core
+    prime:
+      - share/*
+
+  minicom:
+    after: [ncurses]
+    source: minicom-2.7.1
+    plugin: autotools
+    configflags:
+       - --enable-dfl-port=/dev/ttyUSB0
+    prime:
+      - bin/minicom

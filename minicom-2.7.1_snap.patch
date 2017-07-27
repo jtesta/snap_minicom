@@ -1,0 +1,25 @@
+diff -ru minicom-2.7.1/src/minicom.c minicom-2.7.1.snap/src/minicom.c
+--- minicom-2.7.1/src/minicom.c	2013-12-08 10:34:44.000000000 +0000
++++ minicom-2.7.1.snap/src/minicom.c	2017-07-27 19:56:38.227962809 +0000
+@@ -1325,7 +1325,7 @@
+   strncpy(username, pwd->pw_name, sizeof(username));
+ 
+   /* Get personal parameter file */
+-  snprintf(pparfile, sizeof(pparfile), "%s/.minirc.%s", homedir, use_port);
++  snprintf(pparfile, sizeof(pparfile), "%s/snap/minicom-optimized/common/.minirc.%s", homedir, use_port);
+ 
+   read_parms();
+   num_hist_lines = atoi(P_HISTSIZE);
+diff -ru minicom-2.7.1/src/minicom.h minicom-2.7.1.snap/src/minicom.h
+--- minicom-2.7.1/src/minicom.h	2013-12-08 10:26:03.000000000 +0000
++++ minicom-2.7.1.snap/src/minicom.h	2017-07-27 19:58:37.111635016 +0000
+@@ -324,3 +324,9 @@
+   TIMESTAMP_LINE_PER_SECOND,
+   TIMESTAMP_LINE_NR_OF_OPTIONS, // must be last
+ };
++
++#undef CONFDIR
++#define CONFDIR "/var/snap/minicom-optimized/common"
++#undef UUCPLOCK
++#define UUCPLOCK "/var/snap/minicom-optimized/common"
++

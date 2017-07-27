@@ -1,0 +1,44 @@
+diff -ru ncurses-6.0-20170722/ncurses/tinfo/db_iterator.c ncurses-6.0-20170722.snap/ncurses/tinfo/db_iterator.c
+--- ncurses-6.0-20170722/ncurses/tinfo/db_iterator.c	2017-07-01 22:54:42.000000000 +0000
++++ ncurses-6.0-20170722.snap/ncurses/tinfo/db_iterator.c	2017-07-27 17:38:06.631021863 +0000
+@@ -299,39 +299,7 @@
+ 	 * writing to the database, as a performance improvement.
+ 	 */
+ 	values[dbdTIC] = TicDirectory;
+-
+-#if NCURSES_USE_DATABASE
+-#ifdef TERMINFO_DIRS
+-	values[dbdCfgList] = TERMINFO_DIRS;
+-#endif
+-#ifdef TERMINFO
+-	values[dbdCfgOnce] = TERMINFO;
+-#endif
+-#endif
+-
+-#if NCURSES_USE_TERMCAP
+-	values[dbdCfgList2] = TERMPATH;
+-#endif
+-
+-	if (use_terminfo_vars()) {
+-#if NCURSES_USE_DATABASE
+-	    values[dbdEnvOnce] = cache_getenv("TERMINFO", dbdEnvOnce);
+-	    values[dbdHome] = _nc_home_terminfo();
+-	    (void) cache_getenv("HOME", dbdHome);
+-	    values[dbdEnvList] = cache_getenv("TERMINFO_DIRS", dbdEnvList);
+-
+-#endif
+-#if NCURSES_USE_TERMCAP
+-	    values[dbdEnvOnce2] = cache_getenv("TERMCAP", dbdEnvOnce2);
+-	    /* only use $TERMCAP if it is an absolute path */
+-	    if (values[dbdEnvOnce2] != 0
+-		&& *values[dbdEnvOnce2] != '/') {
+-		values[dbdEnvOnce2] = 0;
+-	    }
+-	    values[dbdEnvList2] = cache_getenv("TERMPATH", dbdEnvList2);
+-#endif /* NCURSES_USE_TERMCAP */
+-	}
+-
++        values[dbdCfgOnce] = "/snap/minicom-optimized/current/share/terminfo"; 
+ 	for (j = 0; j < dbdLAST; ++j) {
+ 	    if (values[j] == 0)
+ 		values[j] = "";

@@ -6,7 +6,7 @@ diff -ru minicom-2.7.1/src/minicom.c minicom-2.7.1.snap/src/minicom.c
  
    /* Get personal parameter file */
 -  snprintf(pparfile, sizeof(pparfile), "%s/.minirc.%s", homedir, use_port);
-+  snprintf(pparfile, sizeof(pparfile), "%s/snap/minicom-optimized/common/.minirc.%s", homedir, use_port);
++  snprintf(pparfile, sizeof(pparfile), "%s/snap/minicom/common/.minirc.%s", homedir, use_port);
  
    read_parms();
    num_hist_lines = atoi(P_HISTSIZE);
@@ -19,7 +19,7 @@ diff -ru minicom-2.7.1/src/minicom.h minicom-2.7.1.snap/src/minicom.h
  };
 +
 +#undef CONFDIR
-+#define CONFDIR "/var/snap/minicom-optimized/common"
++#define CONFDIR "/var/snap/minicom/common"
 +#undef UUCPLOCK
-+#define UUCPLOCK "/var/snap/minicom-optimized/common"
++#define UUCPLOCK "/var/snap/minicom/common"
 +

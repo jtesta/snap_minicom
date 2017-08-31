@@ -38,7 +38,7 @@ diff -ru ncurses-6.0-20170722/ncurses/tinfo/db_iterator.c ncurses-6.0-20170722.s
 -#endif /* NCURSES_USE_TERMCAP */
 -	}
 -
-+        values[dbdCfgOnce] = "/snap/minicom-optimized/current/share/terminfo"; 
++        values[dbdCfgOnce] = "/snap/minicom/current/share/terminfo"; 
  	for (j = 0; j < dbdLAST; ++j) {
  	    if (values[j] == 0)
  		values[j] = "";

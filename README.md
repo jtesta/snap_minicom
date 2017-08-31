@@ -1,6 +1,6 @@
 # Minicom (Snap port)
 
-Author: [Joe Testa](http://www.positronsecurity.com/about-us/) ([@therealjoetesta](https://twitter.com/therealjoetesta))
+Author: [Joe Testa](http://www.positronsecurity.com/company/) ([@therealjoetesta](https://twitter.com/therealjoetesta))
 
 ## Overview
 
@@ -9,7 +9,7 @@ This is a [snap](https://snapcraft.io/) port of the [minicom program](https://en
 
 ## Build Process
 
-1.) Begin by obtaining the sources for ncurses:
+1.) Begin by obtaining the sources for ncurses (note that a nightly build is used because the latest stable version does not compile under Ubuntu Core 16):
 
     wget http://invisible-mirror.net/archives/ncurses/current/ncurses-6.0-20170722.tgz
     wget http://invisible-mirror.net/archives/ncurses/current/ncurses-6.0-20170722.tgz.asc

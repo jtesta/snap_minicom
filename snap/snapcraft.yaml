@@ -1,5 +1,5 @@
-name: minicom-optimized
-version: '2.7.1-0'
+name: minicom
+version: '2.7.1-1'
 summary:  Minicom is a friendly menu-driven serial communications program.
 description: |
   This port is optimized for the Snap system.  Unfortunately, it may not work
@@ -12,7 +12,7 @@ grade: stable
 confinement: strict
 
 apps:
-  minicom-optimized:
+  minicom:
     command: minicom
     plugs: [serial-port]
 
